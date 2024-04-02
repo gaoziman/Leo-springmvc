@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+        <!--配置前端控制器-->
+        <servlet>
+            <servlet-name>springmvc</servlet-name>
+            <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+            <!--手动设置springmvc配置文件的路径及名字-->
+            <init-param>
+                <param-name>contextConfigLocation</param-name>
+                <param-value>classpath:springmvc.xml</param-value>
+            </init-param>
+            <!--为了提高用户的第一次访问效率，建议在web服务器启动时初始化前端控制器-->
+            <load-on-startup>1</load-on-startup>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>springmvc</servlet-name>
+            <url-pattern>/</url-pattern>
+        </servlet-mapping>
+</web-app>
