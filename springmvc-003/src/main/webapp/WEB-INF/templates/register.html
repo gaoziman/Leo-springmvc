@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+<h3>用户注册</h3>
+<hr>
+<form th:action="@{/register3}" method="post">
+    用户名：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    性别：
+    男 <input type="radio" name="sex" value="1" />
+    女 <input type="radio" name="sex" value="0" />
+    <br>
+    爱好：
+    抽烟 <input type="checkbox" name="hobby" value="smoke">
+    喝酒 <input type="checkbox" name="hobby" value="drink">
+    烫头 <input type="checkbox" name="hobby" value="perm">
+    <br>
+    简介：<textarea rows="10" cols="60" name="intro"></textarea><br>
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>
